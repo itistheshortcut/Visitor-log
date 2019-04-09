@@ -5,8 +5,12 @@ import Chart from "chart.js";
 class Dashboard extends React.Component {
   dayChartRef = React.createRef();
   monthChartRef = React.createRef();
-  state = { graphType: "day", currentChart: null };
-  async componentDidMount() {}
+  state = { graphType: "day", currentChart: null, currentData: {} };
+  async componentDidMount() {
+    let firebase = this.context;
+    let currentData = await firebase.getVisitors();
+    this.setState({ currentData: currentData });
+  }
   chartByMonth = async () => {
     let firebase = this.context;
     let data = await firebase.getVisitorsByMonth();
@@ -149,13 +153,57 @@ class Dashboard extends React.Component {
     this.chartByMonth();
   };
 
+  parseJSONToCSVStr = jsonData => {
+    if (jsonData.length == 0) {
+      return "";
+    }
+
+    let keys = Object.keys(jsonData[0]);
+
+    let columnDelimiter = ",";
+    let lineDelimiter = "\n";
+
+    let csvColumnHeader = keys.join(columnDelimiter);
+    let csvStr = csvColumnHeader + lineDelimiter;
+
+    jsonData.forEach(item => {
+      console.log(item);
+      keys.forEach((key, index) => {
+        if (key === "time") {
+          csvStr += item[key].toDate();
+        } else {
+          csvStr += item[key];
+        }
+        if (index < keys.length - 1) {
+          csvStr += columnDelimiter;
+        }
+      });
+      csvStr += lineDelimiter;
+    });
+
+    return encodeURIComponent(csvStr);
+  };
+  exportToCsvFile = jsonData => {
+    let csvStr = this.parseJSONToCSVStr(jsonData);
+    let dataUri = "data:text/csv;charset=utf-8," + csvStr;
+
+    let exportFileDefaultName = "data.csv";
+
+    let linkElement = document.createElement("a");
+    linkElement.setAttribute("href", dataUri);
+    linkElement.setAttribute("download", exportFileDefaultName);
+    linkElement.click();
+  };
+
   render() {
     this.state.graphType && this.renderGraph();
 
     return (
       <div className="dashboard">
         <div className="dashboard-button">
-          <button>Export to Excel</button>
+          <button onClick={() => this.exportToCsvFile(this.state.currentData)}>
+            Export to Excel
+          </button>
         </div>
         <div
           className="visitor-graph"
