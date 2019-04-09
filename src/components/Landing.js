@@ -1,4 +1,5 @@
 import React from "react";
+import { FirebaseContext } from "./Firebase";
 
 class Landing extends React.Component {
   state = {
@@ -24,16 +25,20 @@ class Landing extends React.Component {
     return (
       <div className="landing">
         <div className="intro">Welcome to the Shortcut blah blah</div>
-        <div className="buttons">
-          <button onClick={this.firstTimeCount}>First-time Visitor</button>
-          <button onClick={this.regularCount}>Regular</button>
-        </div>
-        <div>
-          Current number of visitors: <br />
-          First time visitors: {this.state.firstTime} <br />
-          Regulars: {this.state.regular} <br />
-          Total: {this.state.visitor} <br />
-        </div>
+        <FirebaseContext.Consumer>
+          {firebase => {
+            return (
+              <div className="buttons">
+                <button onClick={() => firebase.addVisitor("new")}>
+                  First-time Visitor
+                </button>
+                <button onClick={() => firebase.addVisitor("regular")}>
+                  Regular
+                </button>
+              </div>
+            );
+          }}
+        </FirebaseContext.Consumer>
       </div>
     );
   }
