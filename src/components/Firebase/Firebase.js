@@ -21,6 +21,28 @@ class Firebase {
     let snapshot = await this.visitorsRef.orderBy("time").get();
     return snapshot.docs.map(doc => doc.data());
   };
+  getVisitorsToday = async () => {
+    let dummy = new Date(Date.now());
+    let todayDate = new Date(
+      dummy.getFullYear(),
+      dummy.getMonth(),
+      dummy.getDate()
+    );
+    let snapshot = await this.visitorsRef.where("time", ">", todayDate).get();
+    return snapshot.docs.length;
+  };
+  getVisitorsThisMonth = async () => {
+    let dummy = new Date(Date.now());
+    let todayDate = new Date(dummy.getFullYear(), dummy.getMonth());
+    let snapshot = await this.visitorsRef.where("time", ">", todayDate).get();
+    return snapshot.docs.length;
+  };
+  getVisitorsThisYear = async () => {
+    let dummy = new Date(Date.now());
+    let todayDate = new Date(dummy.getFullYear());
+    let snapshot = await this.visitorsRef.where("time", ">", todayDate).get();
+    return snapshot.docs.length;
+  };
   getVisitorsByDay = async () => {
     let returnedObject = {
       new: {},
