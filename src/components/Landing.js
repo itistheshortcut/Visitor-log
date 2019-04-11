@@ -1,5 +1,6 @@
 import React from "react";
 import { FirebaseContext } from "./Firebase";
+import '../css/Landing.css';
 
 class Landing extends React.Component {
   state = {
@@ -24,21 +25,27 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="landing">
-        <div className="intro">Welcome to the Shortcut blah blah</div>
+        <img src="img/shortcut_logo_green.png" alt="the shortcut logo" />
+        <div className="intro">hey, mind letting us know who you are?</div>
         <FirebaseContext.Consumer>
           {firebase => {
             return (
               <div className="buttons">
-                <button onClick={() => firebase.addVisitor("new")}>
-                  First-time Visitor
-                </button>
-                <button onClick={() => firebase.addVisitor("regular")}>
-                  Regular
-                </button>
+                <div className="first-time">
+                  <button onClick={() => firebase.addVisitor("new")}>
+                    first timer
+                  </button>
+                </div>
+                <div className="regular">
+                  <button onClick={() => firebase.addVisitor("regular")}>
+                    regular visitor
+                  </button>
+                </div>
               </div>
             );
           }}
         </FirebaseContext.Consumer>
+        <div className="landing-footer">you look great today by the way!</div>
       </div>
     );
   }

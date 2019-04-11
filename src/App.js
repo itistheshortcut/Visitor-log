@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Landing from "./components/Landing";
 import Dashboard from "./components/Dashboard";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
+//import "./App.css";
 
 class App extends Component {
   state;

@@ -1,0 +1,42 @@
+.landing {
+  font-family: 'CircularStd';
+}
+
+img {
+  width: 20%;
+  height: 20%;
+}
+
+.intro, .landing-footer{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+.buttons {
+  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.buttons > div {
+  display: inline-block;
+}
+
+.buttons button {
+  opacity: 1;
+  border-radius: 50%;
+  height: 20vw;
+  width: 20vw;
+  top: 200px;
+  font-size: 65px;
+  font-weight: bold;
+  font-style: normal;
+}
+.first-time > button {
+  right: 20vw ;
+  background-color: rgba(253,200,30,1);
+}
+.regular > button {
+  left: 20vw;
+  background-color: rgba(77,204,229,1);
+}
