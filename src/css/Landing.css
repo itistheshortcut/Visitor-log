@@ -41,6 +41,10 @@ img {
   transition: width ease 0.3s;
 }
 
+.buttons button:disabled {
+  color: black;
+}
+
 .buttons button.clicked {
   width: 55vw;
 }

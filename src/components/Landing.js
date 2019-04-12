@@ -27,6 +27,7 @@ class Landing extends React.Component {
   firstTimeRef = React.createRef();
   regularRef = React.createRef();
   firstTimeClick = () => {
+    console.log("on click");
     this.context.addVisitor("new");
     this.setState(
       {
@@ -36,7 +37,7 @@ class Landing extends React.Component {
       },
       () => {
         this.firstTimeRef.current.classList.add("clicked");
-        this.firstTimeRef.current.onClick = null;
+        this.firstTimeRef.current.disabled = true;
         this.firstTimeRef.current.innerHTML = flavorText.firstTimeText[1];
         this.regularRef.current.classList.add("disappear");
         setTimeout(
@@ -49,7 +50,7 @@ class Landing extends React.Component {
               },
               () => {
                 this.firstTimeRef.current.classList.remove("clicked");
-                this.firstTimeRef.current.onClick = this.firstTimeClick;
+                this.firstTimeRef.current.disabled = false;
                 this.firstTimeRef.current.innerHTML =
                   flavorText.firstTimeText[0];
                 this.regularRef.current.classList.remove("disappear");
@@ -70,7 +71,7 @@ class Landing extends React.Component {
       },
       () => {
         this.regularRef.current.classList.add("clicked");
-        this.regularRef.current.onClick = null;
+        this.regularRef.current.disabled = true;
         this.regularRef.current.innerHTML = flavorText.regularText[1];
         this.firstTimeRef.current.classList.add("disappear");
         setTimeout(
@@ -83,7 +84,7 @@ class Landing extends React.Component {
               },
               () => {
                 this.regularRef.current.classList.remove("clicked");
-                this.regularRef.current.onClick = this.regularClick;
+                this.regularRef.current.disabled = false;
                 this.regularRef.current.innerHTML = flavorText.regularText[0];
                 this.firstTimeRef.current.classList.remove("disappear");
               }
