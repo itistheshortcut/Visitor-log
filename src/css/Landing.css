@@ -1,5 +1,6 @@
 .landing {
   font-family: "CircularStd";
+  font-size: 65px;
 }
 
 img {
@@ -10,8 +11,15 @@ img {
 .intro,
 .landing-footer {
   text-align: center;
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 600;
+  font-size: 50px;
+}
+.landing > img {
+  margin: 1vh 0 0 1vh;
+}
+
+.intro {
+  margin-top: 1.5em;
 }
 .buttons {
   margin: 50px;
@@ -44,12 +52,12 @@ img {
 }
 
 .first-time > button.clicked {
-  margin: 0 12%;
+  margin: 0 -12%;
 }
 .regular > button {
   background-color: rgba(77, 204, 229, 1);
 }
 
 .regular > button.clicked {
-  margin: 0 -12%;
+  margin: 0 12%;
 }

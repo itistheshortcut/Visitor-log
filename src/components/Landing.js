@@ -1,6 +1,22 @@
 import React from "react";
 import { FirebaseContext } from "./Firebase";
 import "../css/Landing.css";
+const flavorText = {
+  introText: ["", "hey, mind letting us know who you are?"],
+  firstTimeText: [
+    "first timer",
+    "nice to meet you,<br/> let's be best friends!"
+  ],
+  regularText: [
+    "regular visitor",
+    "great to see you again,<br/> have a good one!"
+  ],
+  footerText: [
+    "you look great today by the way!",
+    "Confused? Just grab one of our guys. FYI, they can't run",
+    "Stay awesome, handsome!"
+  ]
+};
 
 class Landing extends React.Component {
   state = {
@@ -83,14 +99,14 @@ class Landing extends React.Component {
         <img src="img/shortcut_logo_green.png" alt="the shortcut logo" />
         <div className="intro">{this.state.introText}</div>
         <div className="buttons">
-          <div className="first-time">
-            <button ref={this.firstTimeRef} onClick={this.firstTimeClick}>
-              {flavorText.firstTimeText[0]}
-            </button>
-          </div>
           <div className="regular">
             <button ref={this.regularRef} onClick={this.regularClick}>
               {flavorText.regularText[0]}
+            </button>
+          </div>
+          <div className="first-time">
+            <button ref={this.firstTimeRef} onClick={this.firstTimeClick}>
+              {flavorText.firstTimeText[0]}
             </button>
           </div>
         </div>
@@ -102,20 +118,3 @@ class Landing extends React.Component {
 
 Landing.contextType = FirebaseContext;
 export default Landing;
-
-const flavorText = {
-  introText: ["", "hey, mind letting us know who you are?"],
-  firstTimeText: [
-    "first timer",
-    "nice to meet you,<br/> let's be best friends!"
-  ],
-  regularText: [
-    "regular visitor",
-    "great to see you again,<br/> have a good one!"
-  ],
-  footerText: [
-    "you look great today by the way!",
-    "Confused? Just grab one of our guys. FYI, they can't run",
-    "Stay awesome, handsome!"
-  ]
-};
