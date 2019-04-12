@@ -1,5 +1,5 @@
 .landing {
-  font-family: 'CircularStd';
+  font-family: "CircularStd";
 }
 
 img {
@@ -7,7 +7,8 @@ img {
   height: 20%;
 }
 
-.intro, .landing-footer{
+.intro,
+.landing-footer {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
@@ -18,25 +19,37 @@ img {
   flex-direction: row;
   justify-content: space-evenly;
 }
-.buttons > div {
-  display: inline-block;
-}
 
 .buttons button {
   opacity: 1;
-  border-radius: 50%;
+  border-radius: 10vw;
   height: 20vw;
   width: 20vw;
   top: 200px;
   font-size: 65px;
   font-weight: bold;
   font-style: normal;
+  outline-style: none;
+  transition: width ease 0.3s;
+}
+
+.buttons button.clicked {
+  width: 55vw;
+}
+.buttons button.disappear {
+  display: none;
 }
 .first-time > button {
-  right: 20vw ;
-  background-color: rgba(253,200,30,1);
+  background-color: rgba(253, 200, 30, 1);
+}
+
+.first-time > button.clicked {
+  margin: 0 12%;
 }
 .regular > button {
-  left: 20vw;
-  background-color: rgba(77,204,229,1);
+  background-color: rgba(77, 204, 229, 1);
+}
+
+.regular > button.clicked {
+  margin: 0 -12%;
 }
