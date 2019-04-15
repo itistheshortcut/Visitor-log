@@ -19,7 +19,7 @@ img {
 }
 
 .intro {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 .buttons {
   margin: 50px;
@@ -39,9 +39,9 @@ img {
   outline-style: none;
   transition: width ease 0.3s;
   border: none;
-  box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .buttons button:disabled {
@@ -67,4 +67,36 @@ img {
 
 .regular > button.clicked {
   margin: 0 12%;
+}
+
+.clock {
+  width: 100%;
+  color: rgb(178, 178, 178);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.clock > div {
+  margin-right: 3vh;
+}
+
+.clock > .clock-time {
+  height: 139px;
+  width: 273px;
+  font-size: 110px;
+  font-weight: 550;
+  letter-spacing: -0.82px;
+  line-height: 139px;
+  text-align: center;
+}
+
+.clock-date {
+  height: 89px;
+  width: 268px;
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -0.52px;
+  line-height: 89px;
+  text-align: center;
 }
