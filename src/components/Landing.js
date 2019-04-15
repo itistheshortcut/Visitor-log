@@ -56,7 +56,7 @@ class Landing extends React.Component {
                 this.regularRef.current.classList.remove("disappear");
               }
             ),
-          5000
+          2000
         );
       }
     );
@@ -89,7 +89,7 @@ class Landing extends React.Component {
                 this.firstTimeRef.current.classList.remove("disappear");
               }
             ),
-          5000
+          2000
         );
       }
     );

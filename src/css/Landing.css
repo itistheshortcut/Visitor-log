@@ -29,7 +29,6 @@ img {
 }
 
 .buttons button {
-  opacity: 1;
   border-radius: 10vw;
   height: 20vw;
   width: 20vw;
@@ -39,6 +38,10 @@ img {
   font-style: normal;
   outline-style: none;
   transition: width ease 0.3s;
+  border: none;
+  box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 10px 6px 1px rgba(0, 0, 0, 0.75);
 }
 
 .buttons button:disabled {
