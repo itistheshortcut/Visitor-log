@@ -6,7 +6,7 @@ class Clock extends React.Component {
     setInterval(() => {
       let now = new Date(Date.now());
       let nowYear = now.getFullYear() % 100;
-      let nowMonth = (now.getMonth() < 10 ? "0" : "") + now.getMonth();
+      let nowMonth = (now.getMonth() + 1 < 10 ? "0" : "") + now.getMonth() + 1;
       let nowDay = (now.getDate() < 10 ? "0" : "") + now.getDate();
       let nowHour = (now.getHours() < 10 ? "0" : "") + now.getHours();
       let nowMin = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
