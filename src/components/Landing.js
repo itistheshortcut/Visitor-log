@@ -88,8 +88,8 @@ class Landing extends React.Component {
                 footerText:
                   flavorText.footerText[
                     Math.floor(
-                      Math.random() * (flavorText.footerFirstText.length - 1)
-                    ) + 1
+                      Math.random() * flavorText.footerFirstText.length
+                    )
                   ]
               },
               () => {
@@ -133,8 +133,8 @@ class Landing extends React.Component {
                 footerText:
                   flavorText.footerText[
                     Math.floor(
-                      Math.random() * (flavorText.footerFirstText.length - 1)
-                    ) + 1
+                      Math.random() * flavorText.footerFirstText.length
+                    )
                   ]
               },
               () => {
@@ -149,6 +149,16 @@ class Landing extends React.Component {
       }
     );
   };
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        footerText:
+          flavorText.footerText[
+            Math.floor(Math.random() * flavorText.footerFirstText.length)
+          ]
+      });
+    }, 90000);
+  }
   render() {
     return (
       <div className="landing">

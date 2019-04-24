@@ -75,6 +75,9 @@ img {
 .clock {
   width: 100%;
   color: rgb(178, 178, 178);
+  position: absolute;
+  right: 0vw;
+  bottom: 0vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
