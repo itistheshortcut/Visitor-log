@@ -14,6 +14,7 @@ img {
   text-align: center;
   font-weight: 600;
   font-size: 50px;
+  white-space: pre-wrap;
 }
 .landing > img {
   margin: 1vh 0 0 1vh;
@@ -43,6 +44,7 @@ img {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
+  white-space: pre-wrap;
 }
 
 .buttons button:disabled {

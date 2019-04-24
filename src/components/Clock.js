@@ -13,7 +13,6 @@ class Clock extends React.Component {
       let nowMin = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
       let nowDate = nowDay + "/" + nowMonth + "/" + nowYear;
       let nowTime = nowHour + ":" + nowMin;
-      console.log(nowDate);
       this.setState({ date: nowDate, time: nowTime });
     }, 1000);
   }

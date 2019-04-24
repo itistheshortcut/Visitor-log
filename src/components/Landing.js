@@ -5,17 +5,43 @@ import "../css/Landing.css";
 const flavorText = {
   introText: ["", "hey, mind letting us know who you are?"],
   firstTimeText: [
-    "first timer",
-    "nice to meet you,<br/> let's be best friends!"
+    "first\ntimer",
+    "nice to meet you,<br /> let's be best friends!",
+    "hey, a smile is a great start",
+    "cool to see you here! we've been waiting for you!",
+    "winterfell is yours, your grace."
   ],
   regularText: [
-    "regular visitor",
-    "great to see you again,<br/> have a good one!"
+    "regular\nvisitor",
+    "great to see you again,<br /> have a good one!",
+    "please leave your coat in the cloak room",
+    "enjoy your day<br /> and stay happy & relaxed!"
+  ],
+  footerFirstText: [
+    "you look great today by the way!",
+    "confused? just grab one of our guys.\nFYI, they can't run",
+    "feel free to take a cup of coffee or tea",
+    "lost? no worries, everyone is pleased to help you.\n just ask for help"
+  ],
+  footerRegularText: [
+    "stay fancy, my friend",
+    "stay awesome, handsome!",
+    "remember to use our job wall",
+    "having you on the team makes a huge difference",
+    "you are better than unicorns and sparkles combined",
+    "your smile is awesome, keep it always"
   ],
   footerText: [
     "you look great today by the way!",
-    "Confused? Just grab one of our guys. FYI, they can't run",
-    "Stay awesome, handsome!"
+    "confused? just grab one of our guys.\nFYI, they can't run",
+    "feel free to take a cup of coffee or tea",
+    "lost? no worries, everyone is pleased to help you.\n just ask for help",
+    "stay fancy, my friend",
+    "stay awesome, handsome!",
+    "remember to use our job wall",
+    "having you on the team makes a huge difference",
+    "you are better than unicorns and sparkles combined",
+    "your smile is awesome, keep it always"
   ]
 };
 
@@ -23,7 +49,10 @@ class Landing extends React.Component {
   state = {
     clicked: false,
     introText: flavorText.introText[1],
-    footerText: flavorText.footerText[0]
+    footerText:
+      flavorText.footerText[
+        Math.floor(Math.random() * (flavorText.footerText.length - 1)) + 1
+      ]
   };
   firstTimeRef = React.createRef();
   regularRef = React.createRef();
@@ -34,12 +63,21 @@ class Landing extends React.Component {
       {
         clicked: true,
         introText: flavorText.introText[0],
-        footerText: flavorText.footerText[1]
+        footerText:
+          flavorText.footerText[
+            Math.floor(
+              Math.random() * (flavorText.footerFirstText.length - 1)
+            ) + 1
+          ]
       },
       () => {
         this.firstTimeRef.current.classList.add("clicked");
         this.firstTimeRef.current.disabled = true;
-        this.firstTimeRef.current.innerHTML = flavorText.firstTimeText[1];
+        this.firstTimeRef.current.innerHTML =
+          flavorText.firstTimeText[
+            Math.floor(Math.random() * (flavorText.firstTimeText.length - 1)) +
+              1
+          ];
         this.regularRef.current.classList.add("disappear");
         setTimeout(
           () =>
@@ -47,7 +85,12 @@ class Landing extends React.Component {
               {
                 clicked: false,
                 introText: flavorText.introText[1],
-                footerText: flavorText.footerText[0]
+                footerText:
+                  flavorText.footerText[
+                    Math.floor(
+                      Math.random() * (flavorText.footerFirstText.length - 1)
+                    ) + 1
+                  ]
               },
               () => {
                 this.firstTimeRef.current.classList.remove("clicked");
@@ -64,16 +107,22 @@ class Landing extends React.Component {
   };
   regularClick = () => {
     this.context.addVisitor("regular");
+    let randFoot =
+      Math.floor(Math.random() * (flavorText.footerRegularText.length - 1)) + 1;
+    console.log(randFoot);
     this.setState(
       {
         clicked: true,
         introText: flavorText.introText[0],
-        footerText: flavorText.footerText[2]
+        footerText: flavorText.footerRegularText[randFoot]
       },
       () => {
         this.regularRef.current.classList.add("clicked");
         this.regularRef.current.disabled = true;
-        this.regularRef.current.innerHTML = flavorText.regularText[1];
+        let rand =
+          Math.floor(Math.random() * (flavorText.regularText.length - 1)) + 1;
+        console.log(rand);
+        this.regularRef.current.innerHTML = flavorText.regularText[rand];
         this.firstTimeRef.current.classList.add("disappear");
         setTimeout(
           () =>
@@ -81,7 +130,12 @@ class Landing extends React.Component {
               {
                 clicked: false,
                 introText: flavorText.introText[1],
-                footerText: flavorText.footerText[0]
+                footerText:
+                  flavorText.footerText[
+                    Math.floor(
+                      Math.random() * (flavorText.footerFirstText.length - 1)
+                    ) + 1
+                  ]
               },
               () => {
                 this.regularRef.current.classList.remove("clicked");
