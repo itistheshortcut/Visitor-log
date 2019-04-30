@@ -2,53 +2,17 @@ import React from "react";
 import { FirebaseContext } from "./Firebase";
 import Clock from "./Clock";
 import "../css/Landing.css";
-const flavorText = {
-  introText: ["", "hey, mind letting us know who you are?"],
-  firstTimeText: [
-    "first\ntimer",
-    "nice to meet you,<br /> let's be best friends!",
-    "hey, a smile is a great start",
-    "cool to see you here! we've been waiting for you!",
-    "winterfell is yours, your grace."
-  ],
-  regularText: [
-    "regular\nvisitor",
-    "great to see you again,<br /> have a good one!",
-    "please leave your coat in the cloak room",
-    "enjoy your day<br /> and stay happy & relaxed!"
-  ],
-  footerFirstText: [
-    "you look great today by the way!",
-    "confused? just grab one of our guys.\nFYI, they can't run",
-    "feel free to take a cup of coffee or tea",
-    "lost? no worries, everyone is pleased to help you.\n just ask for help"
-  ],
-  footerRegularText: [
-    "stay fancy, my friend",
-    "stay awesome, handsome!",
-    "remember to use our job wall",
-    "having you on the team makes a huge difference",
-    "you are better than unicorns and sparkles combined",
-    "your smile is awesome, keep it always"
-  ],
-  footerText: [
-    "you look great today by the way!",
-    "confused? just grab one of our guys.\nFYI, they can't run",
-    "feel free to take a cup of coffee or tea",
-    "lost? no worries, everyone is pleased to help you.\n just ask for help",
-    "stay fancy, my friend",
-    "stay awesome, handsome!",
-    "remember to use our job wall",
-    "having you on the team makes a huge difference",
-    "you are better than unicorns and sparkles combined",
-    "your smile is awesome, keep it always"
-  ]
-};
+import { flavorText } from "../text/text.js";
+import { ReactComponent as Facebook } from "../img/Facebook.svg";
+import { ReactComponent as Instagram } from "../img/Instagram.svg";
+import { ReactComponent as Twitter } from "../img/Twitter.svg";
+import { ReactComponent as Logo } from "../img/logo.svg";
 
 class Landing extends React.Component {
   state = {
     clicked: false,
     introText: flavorText.introText[1],
+    media: 0,
     footerText:
       flavorText.footerText[
         Math.floor(Math.random() * (flavorText.footerText.length - 1)) + 1
@@ -157,12 +121,29 @@ class Landing extends React.Component {
             Math.floor(Math.random() * flavorText.footerFirstText.length)
           ]
       });
-    }, 90000);
+    }, 60000);
+    setInterval(() => {
+      this.setState({
+        media: (this.state.media + 1) % 3
+      });
+    }, 3000);
   }
+  mediaHandlerRender = handlerNumber => {
+    switch (handlerNumber) {
+      case 0:
+        return <Facebook />;
+      case 1:
+        return <Instagram />;
+      case 2:
+        return <Twitter />;
+      default:
+        return "Loading";
+    }
+  };
   render() {
     return (
       <div className="landing">
-        <img src="img/shortcut_logo_green.png" alt="the shortcut logo" />
+        <Logo className="shortcut-logo" />
         <div className="intro">{this.state.introText}</div>
         <div className="buttons">
           <div className="regular">
@@ -177,6 +158,9 @@ class Landing extends React.Component {
           </div>
         </div>
         <div className="landing-footer">{this.state.footerText}</div>
+        <div className="media-handler">
+          {this.mediaHandlerRender(this.state.media)}
+        </div>
         <Clock />
       </div>
     );

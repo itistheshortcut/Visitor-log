@@ -4,20 +4,27 @@
   min-height: 100vh;
 }
 
-img {
-  width: 20%;
-  height: 20%;
+.shortcut-logo {
+  margin: 3.7vh 0 0 3.7vh;
+}
+.media-handler {
+  position: absolute;
+  bottom: 44px;
+  left: 41.5%;
+  display: flex;
+  justify-content: space-around;
+  width: 317px;
+  height: 41px;
+  transition-duration: 2000ms;
 }
 
 .intro,
 .landing-footer {
+  margin-top: 3%;
   text-align: center;
   font-weight: 600;
   font-size: 50px;
   white-space: pre-wrap;
-}
-.landing > img {
-  margin: 1vh 0 0 1vh;
 }
 
 .intro {
@@ -31,9 +38,9 @@ img {
 }
 
 .buttons button {
-  border-radius: 10vw;
-  height: 20vw;
-  width: 20vw;
+  border-radius: 175px;
+  height: 350px;
+  width: 350px;
   top: 200px;
   font-size: 65px;
   font-weight: bold;
@@ -76,20 +83,16 @@ img {
   width: 100%;
   color: rgb(178, 178, 178);
   position: absolute;
-  right: 0vw;
-  bottom: 0vh;
+  right: 4.8vh;
+  bottom: 4.8vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
 }
 
-.clock > div {
-  margin-right: 44px;
-}
-
 .clock > .clock-time {
-  height: 115px;
+  height: 90px;
   width: 273px;
   font-size: 110px;
   font-weight: 550;
@@ -99,7 +102,7 @@ img {
 }
 
 .clock-date {
-  height: 89px;
+  height: 55px;
   width: 268px;
   font-size: 70px;
   font-weight: 500;

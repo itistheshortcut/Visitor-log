@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="246px" height="41px" viewBox="0 0 246 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="frontpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Front-page_FB" transform="translate(-836.000000, -995.000000)" fill="#00A99D">
+            <g id="Facebook" transform="translate(836.000000, 992.000000)">
+                <path d="M20.1361891,25.2729733 L21.1003528,17.8563291 L13.8691247,17.8563291 L13.8691247,13.4063425 C13.8691247,11.2925989 14.4624563,9.69802043 17.5774468,9.69802043 L21.2857689,9.69802043 L21.2857689,3.31970639 C19.439368,3.10776915 17.581755,3.00869646 15.7232858,3.02304062 C13.1257003,2.83509859 10.5777238,3.8040132 8.76135099,5.67044356 C6.94497814,7.53687392 6.04567406,10.1102436 6.3041476,12.7017613 L6.3041476,18.0788284 L-1.42108547e-14,18.0788284 L-1.42108547e-14,25.2729733 L6.3041476,25.2729733 L6.3041476,44 L13.7207918,44 L13.7207918,25.2729733 L20.1361891,25.2729733 Z" id="Path" fill-rule="nonzero"></path>
+                <text id="@theshortcut" font-family="CircularStd-Medium, CircularStd" font-size="35" font-weight="500">
+                    <tspan x="32" y="35">@theshortcut</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
