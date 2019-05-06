@@ -29,7 +29,6 @@ export const flavorText = {
     "keep moving on",
     "great weather, right?",
     "we missed you.",
-    "we missed you.",
     "life is better with you in it",
     "where have you been all my life",
     "I'm a button. you're a person.<br />  perfect match!",
@@ -44,7 +43,7 @@ export const flavorText = {
     "you look great today by the way!",
     "confused? just grab one of our guys.\nFYI, they can't run",
     "feel free to take a cup of coffee or tea",
-    "lost? no worries, everyone is pleased to help you.\n just ask for help",
+    "lost? no worries, we're here for you.\n just ask for help",
     'kiitos ("Take your shoes off" in Finnish)',
     "people like you make this place awesome",
     "if i had a cookie I'd give you half",
@@ -79,13 +78,13 @@ export const flavorText = {
     "you're looking so fine today",
     "keep pushing yourself like you pushed my button",
     "I like how you pushed my button",
-    "don't be too clingy to me ok?\n  we keep it casual here 😜"
+    "just say hi and smile to everyone,\n come in and feel yourself at home"
   ],
   footerText: [
     "you look great today by the way!",
     "confused? just grab one of our guys.\nFYI, they can't run",
     "feel free to take a cup of coffee or tea",
-    "lost? no worries, everyone is pleased to help you.\n just ask for help",
+    "lost? no worries, we're here for you.\n just ask for help",
     'kiitos ("Take your shoes off" in Finnish)',
     "people like you make this place awesome",
     "if i had a cookie I'd give you half",
@@ -118,6 +117,6 @@ export const flavorText = {
     "you're looking so fine today",
     "keep pushing yourself like you pushed my button",
     "I like how you pushed my button",
-    "don't be too clingy to me ok?\n  we keep it casual here 😜"
+    "just say hi and smile to everyone,\n come in and feel yourself at home"
   ]
 };
