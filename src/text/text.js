@@ -1,5 +1,5 @@
 export const flavorText = {
-  introText: ["", "hey, mind letting us know who you are?"],
+  introText: ["that's all folks!", "hey, mind letting us know who you are?"],
   firstTimeText: [
     "first\ntimer",
     "nice to meet you,<br /> let's be best friends!",
