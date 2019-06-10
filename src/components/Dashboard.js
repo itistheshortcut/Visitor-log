@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
       yearlyVisitors
     });
   }
-  parseJSONToCSVStr = jsonData => {
+parseJSONToCSVStr = jsonData => {
     if (jsonData.length === 0) {
       return "";
     }
@@ -34,13 +34,26 @@ class Dashboard extends React.Component {
     let columnDelimiter = ",";
     let lineDelimiter = "\n";
 
-    let csvColumnHeader = keys.join(columnDelimiter);
+    let csvColumnHeader = "date," + keys.join(columnDelimiter);
+    console.log(csvColumnHeader);
     let csvStr = csvColumnHeader + lineDelimiter;
 
     jsonData.forEach(item => {
+      console.log(item);
       keys.forEach((key, index) => {
         if (key === "time") {
-          csvStr += item[key].toDate();
+          csvStr +=
+            item[key].toDate().getFullYear() +
+            "-" +
+            (item[key].toDate().getMonth() + 1) +
+            "-" +
+            item[key].toDate().getDate() +
+            columnDelimiter +
+            item[key].toDate().getHours() +
+            ":" +
+            item[key].toDate().getMinutes() +
+            ":" +
+            item[key].toDate().getSeconds();
         } else {
           csvStr += item[key];
         }
@@ -50,7 +63,7 @@ class Dashboard extends React.Component {
       });
       csvStr += lineDelimiter;
     });
-
+    console.log(csvStr);
     return encodeURIComponent(csvStr);
   };
   exportToCsvFile = jsonData => {
